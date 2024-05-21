@@ -17,17 +17,17 @@ private:
   Relation relation;
   int capacity;
   int head;
-  int tail;
   int firstEmpty;
   int *next;
   int *prev;
   TComp *array;
 
 public:
-  // batshit insanery
-  void allocate();
-  void deallocate();
-
+   //batshit insanity
+	int allocate();
+	void resize();
+	void deallocate(int i);
+	int createNode(TComp elem);
   // constructor
   SortedSet(Relation r);
 
@@ -51,6 +51,8 @@ public:
 
   // returns an iterator for the sorted set
   SortedSetIterator iterator() const;
+
+  void printset() const;
 
   // destructor
   ~SortedSet();

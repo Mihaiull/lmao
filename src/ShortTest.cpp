@@ -14,7 +14,6 @@ bool r2(TComp e1, TComp e2) {
 }
 
 void testAll() {
-  std::cout << "AYOOOOOOOOOOOOOOOO";
   int vverif[5];
   int iverif;
   TComp e;
@@ -35,11 +34,9 @@ void testAll() {
     vverif[iverif++] = e;
     it1.next();
   }
-  for (int i = 0; i < 3; i++)
-    std::cout << vverif[i] << " NU SE PRINTEAZA TE ROG PRINTEAZA";
-  std::cout << "AYOOOOOOOOOOOOOOOO";
-  printf("AYOOOOOOOOOOOOOOOO");
-  // assert((vverif[0] == 1) && (vverif[1] == 5) && (vverif[2] == 10));
+ 
+
+  assert((vverif[0] == 1) && (vverif[1] == 5) && (vverif[2] == 10));
 
   SortedSet s(r2);
   assert(s.isEmpty() == true);
@@ -51,6 +48,8 @@ void testAll() {
   assert(s.add(1) == false);
   assert(s.add(10) == false);
   assert(s.add(-3) == true);
+  std::cout << s.size() << std::endl;
+  s.printset();
   assert(s.size() == 5);
   assert(s.search(10) == true);
   assert(s.search(16) == false);
@@ -70,6 +69,8 @@ void testAll() {
     vverif[iverif++] = e;
     it.next();
   }
+  for (int i = 0; i < 4; i++)
+	  std::cout << vverif[i] << " ";
   assert((vverif[0] == -3) && (vverif[1] == 5) && (vverif[2] == 7) &&
          (vverif[3] == 10));
 }
